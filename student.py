@@ -20,7 +20,7 @@ def local_css(file_name):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Load local CSS file
-local_css("/home/rguktongole/student_performance/stylee.css")
+local_css("stylee.css")
 
 # Function to apply page-specific CSS styles
 def apply_page_style(page_class):
@@ -49,10 +49,10 @@ def hash_password(password):
 # Function to load users from CSV
 def load_users():
     try:
-        users_df = pd.read_csv('/home/rguktongole/student_performance/users.csv')
+        users_df = pd.read_csv('users.csv')
     except FileNotFoundError:
         users_df = pd.DataFrame(columns=['username', 'password', 'role'])
-        users_df.to_csv('/home/rguktongole/users.csv', index=False)
+        users_df.to_csv('users.csv', index=False)
 
     if 'password' not in users_df.columns:
         users_df['password'] = ''
@@ -83,10 +83,10 @@ def apply_page_style(style_class):
 users=load_users()
 
 # Load the trained model
-model = joblib.load('/home/rguktongole/student_performance/student_performance_model.pkl')
+model = joblib.load('student_performance_model.pkl')
 
 # Load the dataset for generating distribution
-data = pd.read_csv('/home/rguktongole/student_performance/student_data.csv')
+data = pd.read_csv('student_data.csv')
 
 # Preprocessing
 data['Gender'] = data['Gender'].map({'M': 0, 'F': 1})
@@ -156,7 +156,7 @@ def set_page_view_students():
 def render_welcome():
     apply_page_style("page_welcome")
     st.title("Welcome to the Student Performance Predictor")
-    st.image("/home/rguktongole/student_performance/result2.jpg", use_column_width=True)
+    st.image("result2.jpg", use_column_width=True)
     st.write("Use the navigation menu to log in and access the prediction system.")
 
 # Function to render the login page
@@ -177,15 +177,15 @@ def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 def load_users():
-    users_df = pd.read_csv('/home/rguktongole/student_performance/users.csv')
+    users_df = pd.read_csv('users.csv')
     users = {row['username']: {'password': row['password'], 'role': row['role']} for index, row in users_df.iterrows()}
     return users
 
 def save_user(username, password, role):
-    users_df = pd.read_csv('/home/rguktongole/student_performance/users.csv')
+    users_df = pd.read_csv('users.csv')
     new_user = pd.DataFrame({'username': [username], 'password': [hash_password(password)], 'role': [role]})
     users_df = pd.concat([users_df, new_user], ignore_index=True)
-    users_df.to_csv('/home/rguktongole/student_performance/users.csv', index=False)
+    users_df.to_csv('users.csv', index=False)
 
 def apply_page_style(style_class):
     st.markdown(
@@ -274,15 +274,15 @@ def render_student_prediction():
         
         # Display relevant image based on performance
         if performance == 'A':
-            st.image("/home/rguktongole/student_performance/A.jpg", use_column_width=True)
+            st.image("A.jpg", use_column_width=True)
         elif performance == 'B':
-            st.image("/home/rguktongole/student_performance/B.png", use_column_width=True)
+            st.image("B.png", use_column_width=True)
         elif performance == 'C':
-            st.image("/home/rguktongole/student_performance/C.png", use_column_width=True)
+            st.image("C.png", use_column_width=True)
         elif performance == 'D':
-            st.image("/home/rguktongole/student_performance/D.jpeg", use_column_width=True)
+            st.image("D.jpeg", use_column_width=True)
         else:
-            st.image("/home/rguktongole/student_performance/F.jpg", use_column_width=True)
+            st.image("F.jpg", use_column_width=True)
 
         # Show prediction distribution (bar graph)
         y_pred = model.predict(X)
