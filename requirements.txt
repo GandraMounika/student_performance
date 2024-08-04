@@ -1,0 +1,8 @@
+streamlit
+pandas
+joblib
+numpy
+uuid
+hashlib
+matplotlib
+smtplib
