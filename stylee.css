@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Logo Style */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Main App Container */
+[data-testid="stApp"] {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+}
+
+/* Sidebar Styles */
+[data-testid="stSidebar"] {
+    background-color: #33415c; /* Dark Blue Background */
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+[data-testid="stSidebar"] .css-17eq0hr {
+    color: #ffffff;
+}
+
+[data-testid="stSidebar"] a {
+    color: #1f77b4; /* Light Blue Link Color */
+}
+
+[data-testid="stSidebar"] a:hover {
+    color: #ff6347; /* Red Hover Color */
+}
+
+/* Navigation Button Styles */
+.stButton>button {
+    background-color: #1f77b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure buttons are full width */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stButton>button:hover {
+    background-color: #105d7a;
+}
+
+/* Input Field Styles */
+.stTextInput>div>div>input, 
+.stNumberInput>div>div>input, 
+.stSelectbox>div>div>div, 
+.stSlider>div>div>div>div>div {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.5em;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.stTextInput>div>div>input:focus, 
+.stNumberInput>div>div>input:focus, 
+.stSelectbox>div>div>div:focus {
+    border-color: #1f77b4;
+}
+
+/* Titles and Text Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: 'black';/#4a4a4a/
+}
+
+.stMarkdown h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #33415c;
+    text-align: center;
+}
+
+.stMarkdown h2 {
+    font-size: 2em;
+    color: #33415c;
+    text-align: center;
+}
+
+.stMarkdown h3 {
+    font-size: 1.75em;
+    color: #33415c;
+}
+
+.stMarkdown p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6em;
+}
+
+.stMarkdown img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Alert Styles */
+.stAlert>div {
+    border: 1px solid #1f77b4;
+    border-radius: 5px;
+    padding: 1em;
+    background-color: #e8f4fc;
+    color: #1f77b4;
+}
+
+/* Custom Styles for Specific Pages */
+.page_welcome {
+    text-align: center;
+    padding: 2em;
+}
+
+.page_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page_prediction {
+    padding: 2em;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-admin-prediction {
+    padding: 2em;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-add-student {
+    padding: 2em;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styles */
+.stSidebar .css-1oeqjc1, .stSidebar .css-1y64cvt {
+    background-color: #33415c;
+    color: black;
+}
+
+.stSidebar .css-1oeqjc1 a, .stSidebar .css-1y64cvt a {
+    color: #1f77b4;
+}
+
+.stSidebar .css-1oeqjc1 a:hover, .stSidebar .css-1y64cvt a:hover {
+    color: #ff6347;
+}
+
+/* Prediction Page Background */
+[data-testid="stAppViewContainer"] {
+    background-image: linear-gradient(#284C62, #F8C85D); /* Gradient background for prediction page */
+    color: black; /* Text color for prediction page */
+}
